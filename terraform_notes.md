@@ -24,7 +24,6 @@ Terraform is an open-source Infrastructure as Code (IaC) tool created by HashiCo
 - **Version control**: Treat infrastructure as code, allowing for tracking and reusability.
 - **Orchestration**: Automates resource dependency management and deployment order.
 - **Collaboration**: Provides tools for team workflows (remote state, workspaces).
-- **Idempotency**: Ensures consistent infrastructure through repeatable operations.
 
 ## Alternatives to Terraform
 - **AWS CloudFormation**: AWS-native IaC tool.
@@ -41,7 +40,6 @@ Terraform is widely adopted by various companies across industries for managing 
 
 ## In IaC, what is orchestration? How does Terraform act as "orchestrator"?
 It refers to the automation of complex operations involving multiple services working together. It involves coordinating the deployment, scaling, configuration and management of multiple resources and services.
-
 
 ## Best practice supplying AWS credentials to Terraform
 - Use environment variables, shared credentials files, or IAM roles.
