@@ -9,6 +9,7 @@
   - [Why use Terraform for different environments (e.g. production, testing, etc)](#why-use-terraform-for-different-environments-eg-production-testing-etc)
 - [How to install Terraform](#how-to-install-terraform)
   - [How to put your access keys onto your system.](#how-to-put-your-access-keys-onto-your-system)
+- [Terraform Diagram](#terraform-diagram)
   - [Local Machine (Installed Terraform)](#local-machine-installed-terraform)
   - [Storing in a Module](#storing-in-a-module)
   - [Run Commands](#run-commands)
@@ -16,7 +17,7 @@
   - [Usual Workflow](#usual-workflow)
   - [Cloud Providers](#cloud-providers)
   - [Providing Credentials](#providing-credentials)
-    - [In summary\*\*:](#in-summary)
+    - [In summary:](#in-summary)
 
 
 # What is Terraform? What is it used for?
@@ -99,6 +100,8 @@ It refers to the automation of complex operations involving multiple services wo
 
 3. Name and add your ID and key! I won't be showing you this bit. It's a secret.
 
+# Terraform Diagram 
+
 ## Local Machine (Installed Terraform)
 You run Terraform from your local machine, where Terraform is installed.
 
@@ -133,7 +136,7 @@ After defining your infrastructure, Terraform can be used to provision resources
 ## Providing Credentials
 To interact with cloud providers (like AWS, GCP, or Azure), you need to provide credentials. These credentials allow Terraform to authenticate and provision resources on the cloud platforms.
 
-### In summary**:
+### In summary:
 - You write Terraform code in a module.
 - Run the commands `init`, `plan`, `apply`, and `destroy` to manage infrastructure.
 - Format the code with `terraform fmt`.
