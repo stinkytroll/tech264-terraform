@@ -1,3 +1,16 @@
+- [What is Terraform? What is it used for?](#what-is-terraform-what-is-it-used-for)
+  - [Why use Terraform? The benefits?](#why-use-terraform-the-benefits)
+  - [Alternatives to Terraform](#alternatives-to-terraform)
+  - [Who is using Terraform in the industry?](#who-is-using-terraform-in-the-industry)
+  - [In IaC, what is orchestration? How does Terraform act as "orchestrator"?](#in-iac-what-is-orchestration-how-does-terraform-act-as-orchestrator)
+  - [Best practice supplying AWS credentials to Terraform](#best-practice-supplying-aws-credentials-to-terraform)
+  - [If Terraform needs AWS access, there are different options on supplying the AWS credentials to Terraform. What is order in which Terraform looks up AWS credentials (which ways take precedence/priority)?](#if-terraform-needs-aws-access-there-are-different-options-on-supplying-the-aws-credentials-to-terraform-what-is-order-in-which-terraform-looks-up-aws-credentials-which-ways-take-precedencepriority)
+  - [What is best practice to supply AWS credentials? Include: How should AWS credentials never be passed to Terraform?](#what-is-best-practice-to-supply-aws-credentials-include-how-should-aws-credentials-never-be-passed-to-terraform)
+  - [Why use Terraform for different environments (e.g. production, testing, etc)](#why-use-terraform-for-different-environments-eg-production-testing-etc)
+- [How to install Terraform](#how-to-install-terraform)
+  - [How to put your access keys onto your system.](#how-to-put-your-access-keys-onto-your-system)
+
+
 # What is Terraform? What is it used for?
 Terraform is an open-source Infrastructure as Code (IaC) tool created by HashiCorp. It allows you to define, provision, and manage infrastructure across multiple cloud providers using a declarative configuration language called HashiCorp Configuration Language (HCL).
 
@@ -50,7 +63,7 @@ It refers to the automation of complex operations involving multiple services wo
 - Use workspaces and modules to isolate and manage multiple environments easily.
 - Allows testing in non-production environments before deploying changes to production.
 
-## How to install Terraform
+# How to install Terraform
 1. Navigate to the website.
 2. Download the version you need. In our case, it's Windows 386.
 3. Unzip the file and move it to your (C:) drive. 
