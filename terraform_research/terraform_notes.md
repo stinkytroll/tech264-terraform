@@ -18,6 +18,8 @@
   - [Cloud Providers](#cloud-providers)
   - [Providing Credentials](#providing-credentials)
     - [In summary:](#in-summary)
+- [How to set up an EC2 instance with terraform](#how-to-set-up-an-ec2-instance-with-terraform)
+- [Adding Variables in Terraform](#adding-variables-in-terraform)
 
 
 # What is Terraform? What is it used for?
@@ -141,3 +143,29 @@ To interact with cloud providers (like AWS, GCP, or Azure), you need to provide 
 - Run the commands `init`, `plan`, `apply`, and `destroy` to manage infrastructure.
 - Format the code with `terraform fmt`.
 - Provide cloud credentials to authenticate Terraform with AWS, GCP, or Azure.
+
+# How to set up an EC2 instance with terraform 
+1. Create environment variables as AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and store them under your system variables.
+2. Setup your `.gitignore` file to hide sensitive information. 
+3. Create your `main.tf` file. We will write our script for deployment in here.
+4. Use `terraform init` to intialise terraform. 
+5. Use `terraform plan`. 
+6. Use `terrform apply` to apply changes. You can use `terraform fmt` prior to format everything nicely.
+7. Check the process has been created and voila! You can also DESTROY!!! this instance by using `terraform destroy`. DESTROY!!!!!
+
+The process is very similar for setting up a security group. Refer to [this file](../main.tf) to see both scripts.
+
+# Adding Variables in Terraform
+1. Create a `variable.tf`.
+2. Inside of it, build variables you can reference in your `main.tf` file like this:
+
+```
+variable "variable_name" {
+    default = "the actual data"
+}
+```
+3. Refer to this in your `main.tf` like this:
+
+```
+a_particular_setting = **var**.variable_name
+```
