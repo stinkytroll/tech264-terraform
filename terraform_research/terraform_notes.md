@@ -9,6 +9,14 @@
   - [Why use Terraform for different environments (e.g. production, testing, etc)](#why-use-terraform-for-different-environments-eg-production-testing-etc)
 - [How to install Terraform](#how-to-install-terraform)
   - [How to put your access keys onto your system.](#how-to-put-your-access-keys-onto-your-system)
+  - [Local Machine (Installed Terraform)](#local-machine-installed-terraform)
+  - [Storing in a Module](#storing-in-a-module)
+  - [Run Commands](#run-commands)
+  - [Terraform Formatting (`terraform fmt`)](#terraform-formatting-terraform-fmt)
+  - [Usual Workflow](#usual-workflow)
+  - [Cloud Providers](#cloud-providers)
+  - [Providing Credentials](#providing-credentials)
+    - [In summary\*\*:](#in-summary)
 
 
 # What is Terraform? What is it used for?
@@ -90,3 +98,43 @@ It refers to the automation of complex operations involving multiple services wo
 ![alt text](image-5.png)
 
 3. Name and add your ID and key! I won't be showing you this bit. It's a secret.
+
+## Local Machine (Installed Terraform)
+You run Terraform from your local machine, where Terraform is installed.
+
+## Storing in a Module
+All the Terraform code (written in `.tf` files) is organized in a module (usually a folder).
+The primary file is `main.tf`, where the infrastructure configuration is defined.
+
+## Run Commands
+The core Terraform workflow consists of running the following commands:
+- `terraform init`: Initializes the working directory with necessary plugins.
+- `terraform plan`: Previews the changes that Terraform will make to your infrastructure.
+- `terraform apply`: Applies the changes to provision the infrastructure.
+- `terraform destroy`: Destroys the created infrastructure (this is destructive and should be used carefully).
+
+## Terraform Formatting (`terraform fmt`)
+`terraform fmt`: A command used to automatically format and fix indentations in Terraform files, ensuring code consistency and readability.
+
+## Usual Workflow
+The usual workflow is to:
+1. Write your configuration (in `main.tf` or other `.tf files`).
+2. Initialize Terraform (`terraform init`).
+3. Preview the changes (`terraform plan`).
+4. Apply the changes (`terraform apply`).
+- Optionally, destroy the infrastructure if needed (`terraform destroy`).
+
+## Cloud Providers
+After defining your infrastructure, Terraform can be used to provision resources on different cloud platforms, such as:
+**AWS** (Amazon Web Services)
+**GCP** (Google Cloud Platform)
+**Azure** (Microsoft Azure)
+
+## Providing Credentials
+To interact with cloud providers (like AWS, GCP, or Azure), you need to provide credentials. These credentials allow Terraform to authenticate and provision resources on the cloud platforms.
+
+### In summary**:
+- You write Terraform code in a module.
+- Run the commands `init`, `plan`, `apply`, and `destroy` to manage infrastructure.
+- Format the code with `terraform fmt`.
+- Provide cloud credentials to authenticate Terraform with AWS, GCP, or Azure.
