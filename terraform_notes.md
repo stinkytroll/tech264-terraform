@@ -66,7 +66,7 @@ It refers to the automation of complex operations involving multiple services wo
 # How to install Terraform
 1. Navigate to the website.
 2. Download the version you need. In our case, it's Windows 386.
-3. Unzip the file and move it to your (C:) drive. 
+3. Unzip the file and move it to a location of your choosing. 
 
 4. Search for **edit the system environment variables** in your Windows search bar. Select it.
 
