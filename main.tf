@@ -67,7 +67,7 @@ resource "aws_security_group" "tech264_kagan_sg" {
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = var.public_cidr_block
   }
 
