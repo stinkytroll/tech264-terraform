@@ -20,6 +20,7 @@
     - [In summary:](#in-summary)
 - [How to set up an EC2 instance with terraform](#how-to-set-up-an-ec2-instance-with-terraform)
 - [Adding Variables in Terraform](#adding-variables-in-terraform)
+- [How to create a GitHub repo using Terraform](#how-to-create-a-github-repo-using-terraform)
 
 
 # What is Terraform? What is it used for?
@@ -167,5 +168,31 @@ variable "variable_name" {
 3. Refer to this in your `main.tf` like this:
 
 ```
-a_particular_setting = **var**.variable_name
+a_particular_setting = var.variable_name
 ```
+
+# How to create a GitHub repo using Terraform
+
+1. Head to your **GitHub settings**.
+
+![alt text](image-6.png)
+
+2. Scroll down and select **Developer Settings**.
+
+![alt text](image-7.png)
+
+3. Select the **Personal Access Tokens** dropdown and select **Tokens (Classic)**.
+
+![alt text](image-8.png)
+
+4. Generate a new token, name it and enable the **public_repo** option. This allows full access of a public repo.
+
+![alt text](image-9.png)
+
+5. Scroll down and select **Generate token**. Then done! Now, let's put your token somewhere safe.
+
+6. Head to your **system environment variables** in your PC settings. You should know where this is now.
+7. **Add** a new one. This will be your **GitHub** token copy pasted from **GitHub** page. *Note! Prefacing the name of your token with `TF_VAR_` will allows Terraform to read it!*
+8. Create a new `main.tf` file. We will put our GitHub script in there.
+9. Write your script. [Click here](../terraform_github_task/github.tf) to see the file in action.
+10. Once complete, open your **GitBash** and begin the **Terraform workflow**. Once ready, use `terraform apply` and watch your repo be magically built!
