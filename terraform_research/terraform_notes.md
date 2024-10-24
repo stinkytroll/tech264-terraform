@@ -114,10 +114,12 @@ The primary file is `main.tf`, where the infrastructure configuration is defined
 
 ## Run Commands
 The core Terraform workflow consists of running the following commands:
-- `terraform init`: Initializes the working directory with necessary plugins.
-- `terraform plan`: Previews the changes that Terraform will make to your infrastructure.
-- `terraform apply`: Applies the changes to provision the infrastructure.
+- `terraform init`: Initializes the working directory with necessary plugins - including their version. This then ends up in a `.terraform.lock.hcl` file.
+- `terraform plan`: Terraform reads the configuration, consults the current state, and generates an execution plan that shows what changes it will make to achieve the desired state
+- `terraform apply`: Terraform needs to apply the plan by sending API calls to the cloud provider or service, which actually provisions the infrastructure. It can **destroy** or **modify** existing resources.
 - `terraform destroy`: Destroys the created infrastructure (this is destructive and should be used carefully).
+
+Terraform doesn't directly "run" code like a traditional programming language; instead, it translates your configuration (written in HashiCorp Configuration Language, HCL) into API requests to provision or manage infrastructure.Terraform doesn't directly "run" code like a traditional programming language; instead, it translates your configuration (written in HashiCorp Configuration Language, HCL) into API requests to provision or manage infrastructure.
 
 ## Terraform Formatting (`terraform fmt`)
 `terraform fmt`: A command used to automatically format and fix indentations in Terraform files, ensuring code consistency and readability.
